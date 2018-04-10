@@ -1,4 +1,4 @@
-import HTML from 'html-parse-stringify2';
+const HTML = require('html-parse-stringify2');
 
 
 export function stringify(ast) {

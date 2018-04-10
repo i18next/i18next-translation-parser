@@ -1,7 +1,7 @@
 {
   "name": "i18next-translation-parser",
   "version": "0.0.1",
-  "description": "parses translations to AST",
+  "description": "parses i18next translations to AST",
   "main": "./index.js",
   "jsnext:main": "dist/es/index.js",
   "keywords": [

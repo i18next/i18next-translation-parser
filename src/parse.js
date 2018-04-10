@@ -1,10 +1,10 @@
-import HTML from 'html-parse-stringify2';
+const HTML = require('html-parse-stringify2');
 
 
 export function parse(str) {
   const ast = HTML.parse(`<dummyI18nTag>${str}</dummyI18nTag>`);
   extendI18nextSugar(ast);
-  console.warn(JSON.stringify(ast, null, 2));
+  // console.warn(JSON.stringify(ast, null, 2));
   return ast[0].children || [];
 }
 
@@ -30,7 +30,7 @@ function extendI18nextSugar(ast) {
                 const content = match.substring(2, match.length - 2);
                 mem.push({ type: 'interpolation', raw: match, prefix: '{{', suffix: '}}', content, variable: content.trim() })
               } else if (match.indexOf('$t{') === 0) {
-                const content = match.substring(3, match.length - 1);
+                const content = match.substring(3, match.length - 2);
                 mem.push({ type: 'nesting', raw: match, prefix: '$t{', suffix: '}', content, variable: content.trim() })
               }
             }
