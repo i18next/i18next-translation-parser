@@ -18,7 +18,8 @@ function extendI18nextSugar(ast) {
     children.forEach(child => {
       if (child.type === 'text') {
         if (child.content.indexOf('{{') > -1 || child.content.indexOf('$t{') > -1) {
-          const newChildren = child.content.split(REGEXP).reduce((mem, match, index) => {
+          const splitted = child.content.split(REGEXP);
+          const newChildren = splitted.length > 1 ? child.content.split(REGEXP).reduce((mem, match, index) => {
             // console.warn(mem, match, index);
             if (index % 2 === 0) {
               mem.push({ type: 'text', content: match });
@@ -35,7 +36,7 @@ function extendI18nextSugar(ast) {
               }
             }
             return mem;
-          }, [])
+          }, []) : [];
           // console.warn(JSON.stringify(newChildren, null, 2));
           child.children = newChildren;
         }
