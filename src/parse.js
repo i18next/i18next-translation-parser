@@ -31,7 +31,7 @@ function extendI18nextSugar(ast) {
                 const content = match.substring(2, match.length - 2);
                 mem.push({ type: 'interpolation', raw: match, prefix: '{{', suffix: '}}', content, variable: content.trim() })
               } else if (match.indexOf('$t{') === 0) {
-                const content = match.substring(3, match.length - 2);
+                const content = match.substring(3, match.length - 1);
                 mem.push({ type: 'nesting', raw: match, prefix: '$t{', suffix: '}', content, variable: content.trim() })
               }
             }

@@ -36,7 +36,7 @@ function extendI18nextSugar(ast) {
                 var _content = match.substring(2, match.length - 2);
                 mem.push({ type: 'interpolation', raw: match, prefix: '{{', suffix: '}}', content: _content, variable: _content.trim() });
               } else if (match.indexOf('$t{') === 0) {
-                var _content2 = match.substring(3, match.length - 2);
+                var _content2 = match.substring(3, match.length - 1);
                 mem.push({ type: 'nesting', raw: match, prefix: '$t{', suffix: '}', content: _content2, variable: _content2.trim() });
               }
             }
