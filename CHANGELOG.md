@@ -1,3 +1,6 @@
+### 1.0.0
+- use a fork of the html parser to persist newlines
+
 ### 0.1.1
 - fix parse of nesting
 

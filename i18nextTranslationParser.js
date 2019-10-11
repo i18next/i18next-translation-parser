@@ -7,7 +7,7 @@
 var HTML = require('html-parse-stringify2');
 
 function parse(str) {
-  var ast = HTML.parse('<dummyI18nTag>' + str + '</dummyI18nTag>');
+  var ast = HTML.parse('<dummyI18nTag>' + str + '</dummyI18nTag>', { ignoreCollapse: true });
   extendI18nextSugar(ast);
   // console.warn(JSON.stringify(ast, null, 2));
   return ast[0].children || [];
