@@ -1,3 +1,6 @@
+### 1.0.1
+- fix nesting to $t() (was wrongly $t{})
+
 ### 1.0.0
 - use a fork of the html parser to persist newlines
 

@@ -8,7 +8,7 @@ export function parse(str) {
   return ast[0].children || [];
 }
 
-const REGEXP = new RegExp('(\{\{[^\}]+\}\}|\\$t\{[^\}]+\})', 'g');
+const REGEXP = new RegExp('(\{\{[^\}]+\}\}|\\$t\\([^\\)]+\\))', 'g');
 
 function extendI18nextSugar(ast) {
 
@@ -17,7 +17,7 @@ function extendI18nextSugar(ast) {
 
     children.forEach(child => {
       if (child.type === 'text') {
-        if (child.content.indexOf('{{') > -1 || child.content.indexOf('$t{') > -1) {
+        if (child.content.indexOf('{{') > -1 || child.content.indexOf('$t(') > -1) {
           const splitted = child.content.split(REGEXP);
           const newChildren = splitted.length > 1 ? child.content.split(REGEXP).reduce((mem, match, index) => {
             // console.warn(mem, match, index);
@@ -30,9 +30,9 @@ function extendI18nextSugar(ast) {
               } else if (match.indexOf('{{') === 0) {
                 const content = match.substring(2, match.length - 2);
                 mem.push({ type: 'interpolation', raw: match, prefix: '{{', suffix: '}}', content, variable: content.trim() })
-              } else if (match.indexOf('$t{') === 0) {
+              } else if (match.indexOf('$t(') === 0) {
                 const content = match.substring(3, match.length - 1);
-                mem.push({ type: 'nesting', raw: match, prefix: '$t{', suffix: '}', content, variable: content.trim() })
+                mem.push({ type: 'nesting', raw: match, prefix: '$t(', suffix: ')', content, variable: content.trim() })
               }
             }
             return mem;

@@ -26,7 +26,7 @@ describe('i18next translation parser', () => {
   before(() => {});
 
   var tests = [
-    {args: ['test {{val}} text {{- encoded}} with {{val, format}} some $t{nesting} help'], expected: 'test {{val}} text {{- encoded}} with {{val, format}} some $t{nesting} help'}
+    {args: ['test {{val}} text {{- encoded}} with {{val, format}} some $t(nesting) help'], expected: 'test {{val}} text {{- encoded}} with {{val, format}} some $t(nesting) help'}
   ];
 
   tests.forEach((test) => {
