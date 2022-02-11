@@ -33,7 +33,7 @@
     "i18next": "4.1.4",
     "istanbul": "gotwarlost/istanbul#source-map",
     "json5": "0.5.1",
-    "karma": "1.4.1",
+    "karma": "6.3.14",
     "karma-browserify": "5.1.1",
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "2.0.0",
