@@ -32,7 +32,7 @@
     "eslint-config-airbnb": "13.0.0",
     "i18next": "4.1.4",
     "istanbul": "gotwarlost/istanbul#source-map",
-    "json5": "0.5.1",
+    "json5": "2.2.2",
     "karma": "6.4.1",
     "karma-browserify": "5.3.0",
     "karma-chai": "0.1.0",
