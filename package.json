@@ -47,7 +47,7 @@
     "karma-sinon": "1.0.5",
     "karma-spec-reporter": "0.0.26",
     "mkdirp": "0.5.1",
-    "mocha": "3.2.0",
+    "mocha": "3.5.3",
     "phantomjs-prebuilt": "2.1.14",
     "rimraf": "2.5.4",
     "rollup": "0.41.1",
